@@ -4,24 +4,34 @@ import TagInput from "./TagInput";
 
 test("TagInput allows adding and removing tags", () => {
   const onTagsChangeMock = jest.fn();
-  render(<TagInput onTagsChange={onTagsChangeMock} />);
+  const initialTags = ["InitialTag"];
+
+  render(<TagInput tagsData={initialTags} onTagsChange={onTagsChangeMock} />);
 
   const input = screen.getByTestId("tag-input");
 
-  // Add tags
+  // Verify initial tags are rendered
+  const tags = screen.getByTestId("tags");
+  expect(tags).toHaveTextContent("InitialTag");
+
+  // Add new tags
   fireEvent.change(input, { target: { value: "React" } });
   fireEvent.keyDown(input, { key: "Enter", code: "Enter" });
 
   fireEvent.change(input, { target: { value: "TypeScript" } });
   fireEvent.keyDown(input, { key: "Enter", code: "Enter" });
 
-  // Verify tags were added
-  const tags = screen.getByTestId("tags");
+  // Verify new tags were added
   expect(tags).toHaveTextContent("React");
   expect(tags).toHaveTextContent("TypeScript");
-  expect(onTagsChangeMock).toHaveBeenCalledWith(["React", "TypeScript"]);
+  expect(onTagsChangeMock).toHaveBeenCalledWith(["InitialTag", "React"]);
+  expect(onTagsChangeMock).toHaveBeenCalledWith([
+    "InitialTag",
+    "React",
+    "TypeScript",
+  ]);
 
-  // Remove a specific tag (e.g., 'React')
+  // Remove the first tag ('InitialTag')
   const removeButton = screen
     .getByTestId("tag-0") // Locate the first tag
     .querySelector("button"); // Find the button within that tag
@@ -29,6 +39,14 @@ test("TagInput allows adding and removing tags", () => {
   if (removeButton) fireEvent.click(removeButton);
 
   // Verify the tag was removed
-  expect(tags).not.toHaveTextContent("React");
-  expect(onTagsChangeMock).toHaveBeenCalledWith(["TypeScript"]);
+  expect(tags).not.toHaveTextContent("InitialTag");
+  expect(onTagsChangeMock).toHaveBeenCalledWith(["React", "TypeScript"]);
+
+  // Test Backspace key behavior
+  fireEvent.keyDown(input, { key: "Backspace", code: "Backspace" });
+  expect(onTagsChangeMock).toHaveBeenCalledWith(["React"]);
+
+  // Test no action on empty input with Backspace
+  fireEvent.keyDown(input, { key: "Backspace", code: "Backspace" });
+  expect(onTagsChangeMock).toHaveBeenCalledWith([]);
 });
