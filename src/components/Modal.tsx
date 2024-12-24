@@ -14,6 +14,11 @@ const Modal: React.FC<ModalProps> = ({ isOpen, toggleModal }) => {
         <h1 id="modal-title" data-testid="modal-title">
           Modal Title
         </h1>
+      </header>
+      <main id="modal-content" data-testid="modal-content">
+        <p>This is a modal example.</p>
+      </main>
+      <footer id="modal-footer">
         <button
           id="close-modal-button"
           onClick={toggleModal}
@@ -21,25 +26,6 @@ const Modal: React.FC<ModalProps> = ({ isOpen, toggleModal }) => {
           aria-label="Close Modal"
         >
           Close
-        </button>
-      </header>
-      <main id="modal-content" data-testid="modal-content">
-        <p>This is a modal example.</p>
-      </main>
-      <footer id="modal-footer">
-        <button
-          id="confirm-button"
-          onClick={toggleModal}
-          data-testid="confirm-button"
-        >
-          Confirm
-        </button>
-        <button
-          id="cancel-button"
-          onClick={toggleModal}
-          data-testid="cancel-button"
-        >
-          Cancel
         </button>
       </footer>
     </div>

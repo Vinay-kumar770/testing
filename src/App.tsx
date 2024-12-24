@@ -22,6 +22,7 @@ type AccordionSection = {
 
 const App: React.FC = () => {
   const [modalOpen, setModalOpen] = useState<boolean>(false);
+  const [modalFormOpen, setModalFormOpen] = useState<boolean>(false);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [tags, setTags] = useState<string[]>([]);
 
@@ -63,13 +64,20 @@ const App: React.FC = () => {
         <Form onSubmit={(data) => console.log("Form Data: ", data)} />
       </div>
       <div className="component-wrapper">
+        <h1>Modal Example</h1>
+        <button onClick={() => setModalOpen(true)}>Open Modal</button>
         <Modal
           isOpen={modalOpen}
           toggleModal={() => setModalOpen(!modalOpen)}
         />
       </div>
       <div className="component-wrapper">
-        <ModalForm isOpen={modalOpen} onClose={() => setModalOpen(false)} />
+        <h1>Modal Form Example</h1>
+        <button onClick={() => setModalFormOpen(true)}>Open Modal Form</button>
+        <ModalForm
+          isOpen={modalFormOpen}
+          onClose={() => setModalFormOpen(false)}
+        />
       </div>
       <div className="component-wrapper">
         <Pagination
