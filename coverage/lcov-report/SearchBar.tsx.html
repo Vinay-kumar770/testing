@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for Slider.tsx</title>
+    <title>Code coverage report for SearchBar.tsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="prettify.css" />
     <link rel="stylesheet" href="base.css" />
@@ -19,7 +19,7 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="index.html">All files</a> Slider.tsx</h1>
+        <h1><a href="index.html">All files</a> SearchBar.tsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
@@ -32,21 +32,21 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>3/6</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7/7</span>
+                <span class='fraction'>12/12</span>
             </div>
         
             
@@ -95,18 +95,32 @@
 <a name='L30'></a><a href='#L30'>30</a>
 <a name='L31'></a><a href='#L31'>31</a>
 <a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -129,36 +143,43 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { useState } from "react";
 &nbsp;
-interface SliderProps {
-  min?: number;
-  max?: number;
-  step?: number;
+interface SearchBarProps {
+  placeholder?: string;
+  onSearch: (query: string) =&gt; void;
 }
 &nbsp;
-const Slider: React.FC&lt;SliderProps&gt; = ({ min = <span class="branch-0 cbranch-no" title="branch not covered" >0,</span> max = <span class="branch-0 cbranch-no" title="branch not covered" >100,</span> step = <span class="branch-0 cbranch-no" title="branch not covered" >1 </span>}) =&gt; {
-  const [value, setValue] = useState&lt;number&gt;(min);
+const SearchBar: React.FC&lt;SearchBarProps&gt; = ({
+  placeholder = "Search..."<span class="branch-1 cbranch-no" title="branch not covered" >,</span>
+  onSearch,
+}) =&gt; {
+  const [query, setQuery] = useState&lt;string&gt;("");
 &nbsp;
   const handleChange = (e: React.ChangeEvent&lt;HTMLInputElement&gt;) =&gt; {
-    setValue(Number(e.target.value));
+    setQuery(e.target.value);
+  };
+&nbsp;
+  const handleSubmit = (e: React.FormEvent) =&gt; {
+    e.preventDefault();
+    onSearch(query);
   };
 &nbsp;
   return (
-    &lt;div&gt;
+    &lt;form onSubmit={handleSubmit}&gt;
       &lt;input
-        type="range"
-        min={min}
-        max={max}
-        step={step}
-        value={value}
+        type="text"
+        value={query}
         onChange={handleChange}
-        data-testid="slider"
+        placeholder={placeholder}
+        data-testid="search-input"
       /&gt;
-      &lt;span data-testid="slider-value"&gt;{value}&lt;/span&gt;
-    &lt;/div&gt;
+      &lt;button type="submit" data-testid="search-button"&gt;
+        Search
+      &lt;/button&gt;
+    &lt;/form&gt;
   );
 };
 &nbsp;
-export default Slider;
+export default SearchBar;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->

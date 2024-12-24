@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for Slider.tsx</title>
+    <title>Code coverage report for Dropdown.tsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="prettify.css" />
     <link rel="stylesheet" href="base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="index.html">All files</a> Slider.tsx</h1>
+        <h1><a href="index.html">All files</a> Dropdown.tsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>15/15</span>
+                <span class='fraction'>11/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>3/6</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7/7</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
@@ -91,13 +91,7 @@
 <a name='L26'></a><a href='#L26'>26</a>
 <a name='L27'></a><a href='#L27'>27</a>
 <a name='L28'></a><a href='#L28'>28</a>
-<a name='L29'></a><a href='#L29'>29</a>
-<a name='L30'></a><a href='#L30'>30</a>
-<a name='L31'></a><a href='#L31'>31</a>
-<a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L29'></a><a href='#L29'>29</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -113,9 +107,7 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -129,36 +121,32 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { useState } from "react";
 &nbsp;
-interface SliderProps {
-  min?: number;
-  max?: number;
-  step?: number;
+interface DropdownProps {
+  options: string[];
 }
 &nbsp;
-const Slider: React.FC&lt;SliderProps&gt; = ({ min = <span class="branch-0 cbranch-no" title="branch not covered" >0,</span> max = <span class="branch-0 cbranch-no" title="branch not covered" >100,</span> step = <span class="branch-0 cbranch-no" title="branch not covered" >1 </span>}) =&gt; {
-  const [value, setValue] = useState&lt;number&gt;(min);
+const Dropdown: React.FC&lt;DropdownProps&gt; = ({ options }) =&gt; {
+  const [selected, setSelected] = useState&lt;string&gt;(options[0]);
 &nbsp;
-  const handleChange = (e: React.ChangeEvent&lt;HTMLInputElement&gt;) =&gt; {
-    setValue(Number(e.target.value));
+  const handleChange = (e: React.ChangeEvent&lt;HTMLSelectElement&gt;) =&gt; {
+    setSelected(e.target.value);
   };
 &nbsp;
   return (
     &lt;div&gt;
-      &lt;input
-        type="range"
-        min={min}
-        max={max}
-        step={step}
-        value={value}
-        onChange={handleChange}
-        data-testid="slider"
-      /&gt;
-      &lt;span data-testid="slider-value"&gt;{value}&lt;/span&gt;
+      &lt;select data-testid="dropdown" value={selected} onChange={handleChange}&gt;
+        {options.map((option, index) =&gt; (
+          &lt;option key={index} value={option}&gt;
+            {option}
+          &lt;/option&gt;
+        ))}
+      &lt;/select&gt;
+      &lt;span data-testid="selected-value"&gt;{selected}&lt;/span&gt;
     &lt;/div&gt;
   );
 };
 &nbsp;
-export default Slider;
+export default Dropdown;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->

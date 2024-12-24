@@ -1,7 +1,123 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1734958355853" clover="3.2.0">
-  <project timestamp="1734958355853" name="All files">
-    <metrics statements="7" coveredstatements="7" conditionals="6" coveredconditionals="3" methods="2" coveredmethods="2" elements="15" coveredelements="12" complexity="0" loc="7" ncloc="7" packages="1" files="1" classes="1"/>
+<coverage generated="1734960073290" clover="3.2.0">
+  <project timestamp="1734960073290" name="All files">
+    <metrics statements="119" coveredstatements="115" conditionals="37" coveredconditionals="24" methods="35" coveredmethods="35" elements="191" coveredelements="174" complexity="0" loc="119" ncloc="119" packages="1" files="11" classes="11"/>
+    <file name="Accordion.tsx" path="C:\Users\vinay\OneDrive\Desktop\poc-testing\src\components\Accordion.tsx">
+      <metrics statements="11" coveredstatements="11" conditionals="4" coveredconditionals="3" methods="4" coveredmethods="4"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="8" count="3" type="stmt"/>
+      <line num="9" count="3" type="stmt"/>
+      <line num="11" count="3" type="stmt"/>
+      <line num="12" count="2" type="cond" truecount="1" falsecount="1"/>
+      <line num="13" count="2" type="stmt"/>
+      <line num="14" count="2" type="stmt"/>
+      <line num="17" count="3" type="stmt"/>
+      <line num="19" count="6" type="stmt"/>
+      <line num="30" count="2" type="stmt"/>
+      <line num="50" count="1" type="stmt"/>
+    </file>
+    <file name="DataTable.tsx" path="C:\Users\vinay\OneDrive\Desktop\poc-testing\src\components\DataTable.tsx">
+      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+      <line num="8" count="1" type="stmt"/>
+      <line num="9" count="1" type="stmt"/>
+      <line num="13" count="3" type="stmt"/>
+      <line num="19" count="2" type="stmt"/>
+      <line num="21" count="6" type="stmt"/>
+      <line num="31" count="1" type="stmt"/>
+    </file>
+    <file name="Dropdown.tsx" path="C:\Users\vinay\OneDrive\Desktop\poc-testing\src\components\Dropdown.tsx">
+      <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="7" count="2" type="stmt"/>
+      <line num="8" count="2" type="stmt"/>
+      <line num="10" count="2" type="stmt"/>
+      <line num="11" count="1" type="stmt"/>
+      <line num="14" count="2" type="stmt"/>
+      <line num="17" count="6" type="stmt"/>
+      <line num="28" count="1" type="stmt"/>
+    </file>
+    <file name="FileUploader.tsx" path="C:\Users\vinay\OneDrive\Desktop\poc-testing\src\components\FileUploader.tsx">
+      <metrics statements="17" coveredstatements="17" conditionals="15" coveredconditionals="13" methods="2" coveredmethods="2"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="8" count="1" type="stmt"/>
+      <line num="9" count="3" type="stmt"/>
+      <line num="10" count="3" type="cond" truecount="1" falsecount="1"/>
+      <line num="12" count="3" type="stmt"/>
+      <line num="13" count="3" type="stmt"/>
+      <line num="15" count="3" type="stmt"/>
+      <line num="16" count="2" type="cond" truecount="3" falsecount="1"/>
+      <line num="17" count="2" type="cond" truecount="1" falsecount="0"/>
+      <line num="18" count="2" type="cond" truecount="4" falsecount="0"/>
+      <line num="19" count="1" type="stmt"/>
+      <line num="20" count="1" type="stmt"/>
+      <line num="22" count="1" type="stmt"/>
+      <line num="23" count="1" type="stmt"/>
+      <line num="24" count="1" type="stmt"/>
+      <line num="29" count="3" type="stmt"/>
+      <line num="42" count="1" type="stmt"/>
+    </file>
+    <file name="Form.tsx" path="C:\Users\vinay\OneDrive\Desktop\poc-testing\src\components\Form.tsx">
+      <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="7" count="3" type="stmt"/>
+      <line num="8" count="3" type="stmt"/>
+      <line num="10" count="3" type="stmt"/>
+      <line num="11" count="2" type="stmt"/>
+      <line num="12" count="2" type="stmt"/>
+      <line num="15" count="3" type="stmt"/>
+      <line num="16" count="1" type="stmt"/>
+      <line num="17" count="1" type="stmt"/>
+      <line num="20" count="3" type="stmt"/>
+      <line num="53" count="1" type="stmt"/>
+    </file>
+    <file name="Modal.tsx" path="C:\Users\vinay\OneDrive\Desktop\poc-testing\src\components\Modal.tsx">
+      <metrics statements="4" coveredstatements="4" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <line num="8" count="2" type="stmt"/>
+      <line num="9" count="2" type="cond" truecount="1" falsecount="0"/>
+      <line num="11" count="1" type="stmt"/>
+      <line num="49" count="1" type="stmt"/>
+    </file>
+    <file name="ModalForm.tsx" path="C:\Users\vinay\OneDrive\Desktop\poc-testing\src\components\ModalForm.tsx">
+      <metrics statements="12" coveredstatements="12" conditionals="1" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="8" count="3" type="stmt"/>
+      <line num="9" count="3" type="stmt"/>
+      <line num="14" count="3" type="stmt"/>
+      <line num="15" count="2" type="stmt"/>
+      <line num="16" count="2" type="stmt"/>
+      <line num="19" count="3" type="stmt"/>
+      <line num="20" count="1" type="stmt"/>
+      <line num="21" count="1" type="stmt"/>
+      <line num="24" count="3" type="cond" truecount="0" falsecount="1"/>
+      <line num="26" count="3" type="stmt"/>
+      <line num="52" count="1" type="stmt"/>
+    </file>
+    <file name="Pagination.tsx" path="C:\Users\vinay\OneDrive\Desktop\poc-testing\src\components\Pagination.tsx">
+      <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <line num="9" count="1" type="stmt"/>
+      <line num="10" count="1" type="stmt"/>
+      <line num="11" count="1" type="stmt"/>
+      <line num="12" count="1" type="stmt"/>
+      <line num="14" count="1" type="stmt"/>
+      <line num="15" count="1" type="stmt"/>
+      <line num="17" count="1" type="stmt"/>
+      <line num="40" count="1" type="stmt"/>
+    </file>
+    <file name="SearchBar.tsx" path="C:\Users\vinay\OneDrive\Desktop\poc-testing\src\components\SearchBar.tsx">
+      <metrics statements="12" coveredstatements="12" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="3"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="8" count="1" type="stmt"/>
+      <line num="9" count="2" type="cond" truecount="1" falsecount="1"/>
+      <line num="10" count="2" type="stmt"/>
+      <line num="12" count="2" type="stmt"/>
+      <line num="14" count="2" type="stmt"/>
+      <line num="15" count="1" type="stmt"/>
+      <line num="18" count="2" type="stmt"/>
+      <line num="19" count="1" type="stmt"/>
+      <line num="20" count="1" type="stmt"/>
+      <line num="23" count="2" type="stmt"/>
+      <line num="39" count="1" type="stmt"/>
+    </file>
     <file name="Slider.tsx" path="C:\Users\vinay\OneDrive\Desktop\poc-testing\src\components\Slider.tsx">
       <metrics statements="7" coveredstatements="7" conditionals="6" coveredconditionals="3" methods="2" coveredmethods="2"/>
       <line num="1" count="1" type="stmt"/>
@@ -11,6 +127,32 @@
       <line num="13" count="1" type="stmt"/>
       <line num="16" count="2" type="stmt"/>
       <line num="32" count="1" type="stmt"/>
+    </file>
+    <file name="TagInput.tsx" path="C:\Users\vinay\OneDrive\Desktop\poc-testing\src\components\TagInput.tsx">
+      <metrics statements="23" coveredstatements="19" conditionals="8" coveredconditionals="3" methods="7" coveredmethods="7"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="7" count="6" type="stmt"/>
+      <line num="8" count="6" type="stmt"/>
+      <line num="9" count="6" type="stmt"/>
+      <line num="11" count="6" type="stmt"/>
+      <line num="12" count="2" type="stmt"/>
+      <line num="15" count="6" type="stmt"/>
+      <line num="16" count="2" type="cond" truecount="3" falsecount="1"/>
+      <line num="17" count="2" type="stmt"/>
+      <line num="18" count="2" type="stmt"/>
+      <line num="19" count="2" type="stmt"/>
+      <line num="20" count="0" type="cond" truecount="0" falsecount="4"/>
+      <line num="21" count="0" type="stmt"/>
+      <line num="22" count="0" type="stmt"/>
+      <line num="23" count="0" type="stmt"/>
+      <line num="27" count="6" type="stmt"/>
+      <line num="28" count="2" type="stmt"/>
+      <line num="29" count="1" type="stmt"/>
+      <line num="30" count="1" type="stmt"/>
+      <line num="33" count="6" type="stmt"/>
+      <line num="36" count="5" type="stmt"/>
+      <line num="38" count="1" type="stmt"/>
+      <line num="54" count="1" type="stmt"/>
     </file>
   </project>
 </coverage>
