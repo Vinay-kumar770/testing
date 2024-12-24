@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1734960073290" clover="3.2.0">
-  <project timestamp="1734960073290" name="All files">
+<coverage generated="1735018988127" clover="3.2.0">
+  <project timestamp="1735018988127" name="All files">
     <metrics statements="119" coveredstatements="115" conditionals="37" coveredconditionals="24" methods="35" coveredmethods="35" elements="191" coveredelements="174" complexity="0" loc="119" ncloc="119" packages="1" files="11" classes="11"/>
     <file name="Accordion.tsx" path="C:\Users\vinay\OneDrive\Desktop\poc-testing\src\components\Accordion.tsx">
       <metrics statements="11" coveredstatements="11" conditionals="4" coveredconditionals="3" methods="4" coveredmethods="4"/>

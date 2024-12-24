@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 
 interface TagInputProps {
+  tagsData: string[];
   onTagsChange: (tags: string[]) => void;
 }
 
-const TagInput: React.FC<TagInputProps> = ({ onTagsChange }) => {
-  const [tags, setTags] = useState<string[]>([]);
+const TagInput: React.FC<TagInputProps> = ({ tagsData, onTagsChange }) => {
+  const [tags, setTags] = useState<string[]>(tagsData);
   const [inputValue, setInputValue] = useState<string>("");
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
